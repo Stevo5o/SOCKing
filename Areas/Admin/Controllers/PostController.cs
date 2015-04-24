@@ -32,6 +32,7 @@ namespace SOCKing.Areas.Admin.Controllers
         // /admin/post/create/
         [HttpPost]
         [Route("create")]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Post model)
         {
             if (!ModelState.IsValid)
@@ -47,6 +48,7 @@ namespace SOCKing.Areas.Admin.Controllers
         // /admin/post/edit/post-to-edit
         [HttpGet]
         [Route("edit/{id}")]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(string id)
         {
             // TODO: to retieve the model from the data store
