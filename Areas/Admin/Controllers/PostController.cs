@@ -54,11 +54,11 @@ namespace SOCKing.Areas.Admin.Controllers
 
         // /admin/post/edit/post-to-edit
         [HttpGet]
-        [Route("edit/{id}")]
-        public ActionResult Edit(string id)
+        [Route("edit/{postId}")]
+        public ActionResult Edit(string postId)
         {
             // TODO: to retieve the model from the data store
-            var post = _repository.Get(id);
+            var post = _repository.Get(postId);
 
             if (post == null)
             {
@@ -69,8 +69,8 @@ namespace SOCKing.Areas.Admin.Controllers
 
         // /admin/post/edit/post-to-edit
         [HttpPost]
-        [Route("edit/{id}")]
-        public ActionResult Edit(Post model)
+        [Route("edit/{postId}")]
+        public ActionResult Edit(Post model, string postId)
         {
             if (!ModelState.IsValid)
             {
